@@ -1,1 +1,79 @@
 @import styles/helpers
+
+.header
+    border-bottom: 2px solid $n3
+
+.wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.logo_wrapper
+    @include center-all    
+    width: 60px
+    margin-left: 34px
+
+.logo
+    width: 100%
+
+.nav_wrapper
+    display: flex
+
+.nav_list
+    display: flex
+    align-content: center
+    gap: 24px
+    padding-top: 6px
+    max-height: 65px !important
+
+
+.nav_item_link
+    font-size: 14px
+    color: $white
+    padding: 0 8px 12px
+    &:hover
+        .nav_item_underline
+            background: $s4
+            width: 100%
+            height: 4px
+            border-radius: 2px 2px 0 0
+
+.nav_item_underline
+    background: $s4
+    width: 0
+    transition: all 0.15s ease
+    height: 4px
+    border-radius: 2px
+
+.active_route
+    width: 100%
+
+.date_and_register_wrapper
+    display: flex
+    align-items: center
+    gap: 20px
+
+.date_wrapper
+    @include center-all  
+    gap: 6px  
+    border: 1px solid $n9
+    background: $n10
+    border-radius: 5px
+    padding: 6px
+
+.date
+    font-weight: 300
+    font-size: 13px
+    color: $n3
+
+.register_btns
+    display: flex
+    gap: 8px
+    span
+        font-size: 14px
+        font-weight: 300
+
+.register_btn
+    font-size: 14px
+    font-weight: 300
+    color: $white
