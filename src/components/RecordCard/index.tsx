@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styles from "./CourseCard.module.sass";
+import React from "react";
+import styles from "./RecordCard.module.sass";
 import Link from "lib/Link";
 
-const CourseCard = ({ data }: any) => {
+const RecordCard = ({ data }: any) => {
   return (
-    <Link href={`/dashboard/course/${data?.slug}`}>
+    <Link href={`/dashboard/record/${data?.slug}`}>
       <div className={styles.card}>
         <div className={styles.images_wrapper}>
           <img src={data?.image} alt={"picture"} className={styles.image} />
@@ -27,4 +27,4 @@ const CourseCard = ({ data }: any) => {
   );
 };
 
-export default CourseCard;
+export default RecordCard;

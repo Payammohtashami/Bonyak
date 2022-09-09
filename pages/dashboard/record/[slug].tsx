@@ -1,20 +1,20 @@
-import Dashboard from "container/Dashboard/Base";
+import RecordDetail from "container/RecordDetail";
 import type { NextPage, GetServerSideProps } from "next";
 import { Fragment } from "react";
 
-const DashboardPage: any = () => {
+const recordDetailPage: any = () => {
   return (
     <Fragment>
-      <Dashboard />
+      <RecordDetail />
     </Fragment>
   );
 };
 
-DashboardPage.dashboard = true;
+recordDetailPage.dashboard = true;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {},
   };
 };
 
-export default DashboardPage;
+export default recordDetailPage;

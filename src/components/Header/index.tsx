@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./Header.module.sass";
 import cn from "classnames";
 import Link from "lib/Link";
@@ -8,11 +8,12 @@ import Icon from "components/Icon";
 import { HeaderNavType } from "types";
 
 const Header: React.FC = () => {
+  const [activeUser, setActiveUser] = useState(true)
   const router = useRouter();
   const navData: HeaderNavType[] = [
     {
-      title: "صفحه نخست",
-      route: routes.home,
+      title: "پنل کاربری",
+      route: routes.dashboard.base,
     },
   ];
 
@@ -37,17 +38,25 @@ const Header: React.FC = () => {
               ))}
             </ul>
           </div>
-          <div className={styles.date_and_register_wrapper}>
-            <div className={styles.register_btns}>
-              <Link href={routes.login} className={styles.register_btn}>
-                ورود
-              </Link>
-              <span>-</span>
-              <Link href={routes.register} className={styles.register_btn}>
-                ثبت نام
-              </Link>
+          {
+            activeUser ? 
+            <div className={styles.user_wrapper}>
+                <img src="/images/1.png" className={styles.user_image} />
+                <p className={styles.username}>مهدیه امیری</p>
             </div>
-          </div>
+            :
+            <div className={styles.date_and_register_wrapper}>
+              <div className={styles.register_btns}>
+                <Link href={routes.login} className={styles.register_btn}>
+                  ورود
+                </Link>
+                <span>-</span>
+                <Link href={routes.register} className={styles.register_btn}>
+                  ثبت نام
+                </Link>
+              </div>
+            </div>
+          }
         </div>
       </div>
     </header>
